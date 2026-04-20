@@ -1,0 +1,25 @@
+def comp_ticket_price(miles):
+    if miles >= 30:
+        return 12
+    elif miles >= 20:
+        return 10
+    elif miles >= 10:
+        return 8
+    else:
+        return 5
+
+total_tickets = 0
+
+response = input("Run train ticket program? (Yes or No): ")
+while response.lower() == "yes":
+    name = input("Enter Last Name: ")
+    miles = float(input("Enter miles from downtown Chicago: "))
+    
+    price = comp_ticket_price(miles)
+    total_tickets += price
+    
+    print(f"Ticket price for {name}: ${price:.2f}")
+    
+    response = input("Run again? (Yes or No): ")
+
+print(f"\nTotal price of all tickets: ${total_tickets:,.2f}")
